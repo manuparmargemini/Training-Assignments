@@ -1,88 +1,161 @@
 <html>
 	<head>
-		<title> Assignment 3 </title>
-		<link rel = "stylesheet" type = "text/css" href = "styles.css"></link>
-	</head>
+		<title> Assignment 4 </title>
+		<style>
+			.heading {
+				font-size: 35px;
+				color: orange;
+				margin-bottom: 40px;
+			}
+			.parent {
+			}
+			.parent2 {
+				font-size: 2em;
+			}
+			.first {
+				font-size: 2em;
+			}
+			.child {
+				font-size: 2rem;
+			}
+			.pixels {
+				font-size: 25px;
+			}
+			.firstvw {
+				font-size: 2vw;
+			}
+			.firstvh {
+				font-size: 5vh;
+			}
+			span p {
+				background-color: yellow;
+			}
+			.mydiv > p {
+				background-color: orange;
+			}
+			p + span {
+				background-color: skyblue;
+			}
+			.mydiv ~ div {
+				background-color: lightgreen;
+			}
+			.box {
+				position: relative;
+				left: 50%;
+				width: 100px;
+				height: 100px;
+				border: 4px solid skyblue;
+			}
+			.box:hover {
+				width: 50px;
+				height: 50px;
+				transition: width 2s, height 2s, transform 2s;
+			}
+			.tilt {
+				top: 150px;
+				background-color: orange;
+				transform: rotate(45deg);
+			}
+		</style>
 	</head>
 	<body>
-		<header>
-			This is the header section and it remains sticked here.
-		</header>
-		<h2>
-			Student Registration Form
-		</h2>
-		<form>
-			<label class = "botmar" for="name">Name:
-			<input class = "botmar" type="text" id="name" name="name"><br/>
-			<label class = "botmar" for="phone_no">Phone No:</label>
-			<input class = "botmar" type="number" id="phone_no" name="phone_no"><br/>
-			<label class = "botmar" for="dob">Date of Birth:</label>
-			<input class = "botmar" type="date" id="dob" name="dob"><br/>
-			<label class = "botmar" for="address">Address:</label>
-			<textarea class = "botmar" rows = "10" columns = "30" id = "address" name = "address"> </textarea><br/>
-			<label class = "botmar" for = "gender">Gender:</label>
-			<label class = "botmar" for="male">Male</label>
-			<input class = "botmar" type = "radio" id = "male" name = "male" value = "male">
-			<label class = "botmar" for="male">Female</label>
-			<input class = "botmar" type = "radio" id = "female" name = "male" value = "female"><br/>
-			<label class = "botmar" for="city">City:</label>
-			<select class = "botmar" name = "city" id = "city">
-				<option value = "">Select City</option>
-				<option value = "new delhi">New Delhi</option>
-				<option value = "mumbai">Mumbai</option>
-				<option value = "kolkata">Kolkata</option>
-				<option value = "chennai">Chennai</option>
-			</select><br/>
-			<label class = "botmar">Hobbies:</label>
-			<input class = "botmar" type = "checkbox" id = "hobby1" name = "hobby1" value = "music">
-			<label class = "botmar" for = "hobby1">Music</label><br/>
-			<input class = "botmar" type = "checkbox" id = "hobby2" name = "hobby2" value = "sports">
-			<label class = "botmar" for = "hobby2">Sports</label><br/>
-			<input class = "botmar" type = "checkbox" id = "hobby3" name = "hobby3" value = "reading">
-			<label class = "botmar" for = "hobby3">Reading</label><br/>
-			<input class = "botmar" type = "checkbox" id = "hobby4" name = "hobby4" value = "dancing">
-			<label class = "botmar" for = "hobby4">Dancing</label><br/>
-			<input class = "botmar" type = "submit">
-			<input class = "botmar" type = "reset">
-			<br/>
-			<h2>
-				Student Records
-			</h2>
-			<table style = "width: 100%">
-				<tr>	
-					<th>S.No.</th>
-					<th>Name</th>
-					<th>Phone No.</th>
-					<th>Gender</th>
-					<th>DOB</th>
-					<th>Interests</th>
-				</tr>
-				<tr>
-					<td rowspan="3">1</td>
-					<td rowspan="3">Akash</td>
-					<td rowspan="3">123-4-567</td>
-					<td rowspan="3">Male</td>
-					<td rowspan="3">12/12/1996</td>
-					<td>Music</td>
-				</tr>
-				<tr>
-					<td>Dance</td>
-				</tr>
-				<tr>
-					<td>Cooking</td>
-				</tr>
-				<tr>
-					<td rowspan="2">1</td>
-					<td rowspan="2">Akash</td>
-					<td rowspan="2">123-2-567</td>
-					<td rowspan="2">Male</td>
-					<td rowspan="2">12/12/1996</td>
-					<td>Dance</td>
-				</tr>
-				<tr>
-					<td>Travel</td>
-				</tr>
-			</table>
-		</form>
+		<div class = "heading">
+			Demonstration of various sizes
+		</div>
+		<div class = "parent">
+			normal text
+			<p class = "first">This is having twice the size of normal text</p>
+			<div class = "child">
+				This text is having twice the size of its root element size i.e. normal text.
+			</div>
+		</div>
+		
+		<div class = "parent2">
+			first text having 2em size
+			<p class = "first">This is having twice the size of first text</p>
+			<div class = "child">
+				This text is having twice the size of its root element size i.e. first text.
+			</div>
+		</div>
+		
+		<p class = "pixels">
+			Text having font-size = 25px
+		</p>
+		
+		<p class = "firstvw">
+			Text here changes on changing the width of the browser window.
+		</p>
+		
+		<p class = "firstvh">
+			Text here changes on changing the height of the browser window.
+		</p>
+		
+		<div class = "heading">
+			Demonstration of CSS Combinators
+		</div>
+		
+		<span>
+			The text inside span
+			<p>
+				This text inside p that is descendent of span.
+				<p>
+					Another descendent.
+				</p>
+			</p>
+		</span>
+		<p> 
+			Text outside span is not highlighted.
+		</p>
+		
+		<div class = "mydiv">
+			<span>
+				Text inside mydiv.
+			</span>
+			<p>
+				Text of p immediately inside mydiv.
+			</p>
+			
+			<span> 
+				First sibling of p that too is span.
+			</span>
+			
+			<span> 
+				Second span that is sibling of p.
+			</span>
+			
+			<span> 
+				Third span that is sibling of p.
+			</span>
+			
+			
+			<div>
+				<p>
+					This text of p is descendent of mydiv but not the immediate child, therefore, no highlight.
+				</p>
+			</div>
+		</div>
+		
+		<div>
+			First general sibling of mydiv class.
+		</div>
+		
+		<div>
+			Second general sibling of mydiv class.
+		</div>
+		
+		<div>
+			Third general sibling of mydiv class.
+		</div>
+		
+		<p class = "heading">
+			Demonstration of CSS Transition and Transform
+		</div>
+		
+		<p>
+			Behavior of boxes is going to change when you hover on them.
+		</p>
+		
+		<div class = "box"></box>
+		<div class = "box tilt"></box>
 	</body>
 </html>
